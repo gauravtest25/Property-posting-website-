@@ -1,49 +1,64 @@
-# Property Posting Website
+Property Posting Website
 
-A modern property posting website built with HTML, CSS, JavaScript, and **Clerk.com authentication**. Property data is stored in localStorage for demo purposes.
+This is a simple property posting website made with HTML, CSS, and JavaScript. For demo use, property data is stored in the browser using localStorage.
 
-## Features
-- 🏠 **Home Page**: Browse/search property listings with voice search
-- 📄 **Property Details**: View full property details with admin price editing
-- ➕ **Post Property**: Add new properties (admin users only)
-- 🔐 **Authentication**: Secure login/signup powered by Clerk.com
-- 📊 **Dashboard**: User dashboard with liked properties and buy requests
-- 👑 **Role-based Access**: Admin and regular user roles
-- 📱 **Responsive Design**: Modern, mobile-friendly UI
-- 🎤 **Voice Search**: Speak to search properties
+Features
 
-## Authentication
+Home page to browse and search properties (also supports voice search)
 
-This project now uses **Clerk.com** for authentication, providing:
-- Secure user management
-- Social login options
-- Password reset functionality
-- Role-based access control
-- Production-ready security
+Property details page to see full information
 
-## How to Run
+Users can like properties or send buy requests
 
-### Quick Start (Demo Mode)
-1. Download or clone this repository
-2. Open `config.js` and add your Clerk publishable key
-3. Open `index.html` in your browser
-4. Sign up for an account to start using the platform
+Admin can post new properties
 
-### Full Setup
-1. **Get Clerk Account**: Create account at [clerk.com](https://clerk.com)
-2. **Configure Keys**: Follow instructions in `CLERK_SETUP.md`
-3. **Set Admin Role**: Add `{"role": "admin"}` to user's public metadata in Clerk dashboard
-4. **Test**: Open `index.html` and test authentication flow
+Admin panel to see all properties, likes, and buy requests
 
-## Pages
-- `index.html` - Home page
-- `property.html` - Property details
-- `login.html` - Login
-- `signup.html` - Signup
-- `post.html` - Post property
-- `dashboard.html` - User dashboard
+User panel to see liked properties and buy requests
 
-## Notes
-- To post or manage properties, sign up and log in.
-- All data is local to your browser and will be lost if you clear localStorage.
-- Image uploads are stored as base64 in localStorage (for demo purposes). 
+Works on both desktop and mobile screens
+
+Panels
+User Panel
+
+Browse available properties
+
+Like properties or send a buy request
+
+See all liked properties and buy requests in the dashboard
+
+Admin Panel
+
+Add new properties
+
+View all posted properties
+
+Check likes and buy requests from users
+
+How to Run
+
+Download or clone this project
+
+Open index.html in your browser
+
+Use the admin panel to add properties
+
+Use the user panel to like or buy properties
+
+Pages
+
+index.html - Home page
+
+property.html - Property details
+
+post.html - Post property (Admin)
+
+dashboard.html - User dashboard
+
+admin.html - Admin dashboard
+
+Notes
+
+Data is saved in localStorage, so it will be lost if the browser storage is cleared
+
+Images are stored in base64 format in localStorage for demo use
