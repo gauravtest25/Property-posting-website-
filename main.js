@@ -240,7 +240,7 @@ function populateDemoProperties() {
             price: 1300,
             location: 'Nashville',
             description: 'Spacious farmhouse with acres of land. Enjoy the tranquility of country living close to the city.',
-            image: 'https://images.unsplash.com/photo-1464029902023-f42eba355bde?auto=format&fit=crop&w=400&q=80',
+            image: 'https://images.unsplash.com/photo-1464029902023-f42eba355bde?auto=formatfit=crop&w=400&q=80',
             owner: 'demo'
         }
     ];
@@ -275,50 +275,4 @@ document.addEventListener('DOMContentLoaded', function() {
     renderProperties(getProperties());
 });
 
-// --- Voice Search Integration ---
-const voiceBtn = document.getElementById('voiceSearchBtn');
-const voiceStatus = document.getElementById('voiceStatus');
-if (voiceBtn && window.SpeechRecognition || window.webkitSpeechRecognition) {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'en-US';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    voiceBtn.addEventListener('click', function() {
-        voiceStatus.textContent = 'Listening...';
-        recognition.start();
-    });
-
-    recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript.toLowerCase();
-        voiceStatus.textContent = 'Heard: "' + transcript + '"';
-        // Try to extract price and location
-        let location = '';
-        let price = '';
-        // e.g. "property in new york under 2000"
-        const priceMatch = transcript.match(/under (\d+)/);
-        if (priceMatch) price = priceMatch[1];
-        // Try to extract location (words after 'in' or 'at')
-        const locMatch = transcript.match(/in ([a-zA-Z ]+)/) || transcript.match(/at ([a-zA-Z ]+)/);
-        if (locMatch) location = locMatch[1].replace(/ under.*/, '').trim();
-        // Fallback: if user says only a city or only a price
-        if (!location && !price) {
-            if (/\d+/.test(transcript)) price = transcript.match(/\d+/)[0];
-            else location = transcript;
-        }
-        document.getElementById('searchLocation').value = location;
-        document.getElementById('searchPrice').value = price;
-        // Trigger search
-        document.getElementById('searchForm').dispatchEvent(new Event('submit'));
-    };
-    recognition.onerror = function(event) {
-        voiceStatus.textContent = 'Voice error: ' + event.error;
-    };
-    recognition.onend = function() {
-        setTimeout(() => { voiceStatus.textContent = ''; }, 2000);
-    };
-} else if (voiceBtn) {
-    voiceBtn.style.display = 'none';
-    if (voiceStatus) voiceStatus.textContent = 'Voice search not supported.';
-} 
+ 
