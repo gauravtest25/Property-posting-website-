@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PropList</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html" id="dashboardLink">Dashboard</a></li>
+            <li><a href="post.html" id="postLink">Post Property</a></li>
+            <li><a href="login.html" id="loginLink">Login</a></li>
+            <li><a href="signup.html" id="signupLink">Signup</a></li>
+            <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </nav>
+    <main>
+        <div id="message"></div>
+        <section id="propertyDetails" class="property-details-section">
+            <!-- Property details will be injected here -->
+        </section>
+        <div style="text-align:center; margin:2rem;">
+            <a href="index.html" class="property-card-btn">Back to Home</a>
+        </div>
+    </main>
+    <script src="property.js"></script>
+</body>
+</html> 

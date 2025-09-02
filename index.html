@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Posting Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PropList</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html" id="dashboardLink">Dashboard</a></li>
+            <li><a href="post.html" id="postLink">Post Property</a></li>
+            <li><a href="login.html" id="loginLink">Login</a></li>
+            <li><a href="signup.html" id="signupLink">Signup</a></li>
+            <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </nav>
+    <header class="hero">
+        <h1>Find Your Dream Property</h1>
+        <form id="searchForm">
+            <input type="text" id="searchLocation" placeholder="Search by location...">
+            <input type="number" id="searchPrice" placeholder="Max price">
+            <button type="submit">Search</button>
+            <button type="button" id="voiceSearchBtn" title="Voice Search" style="background:transparent;border:none;cursor:pointer;padding:0 0.5rem;vertical-align:middle;">
+                <img src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="Mic" style="width:28px;height:28px;filter:invert(40%) sepia(80%) saturate(500%) hue-rotate(230deg);">
+            </button>
+            <span id="voiceStatus" style="margin-left:0.5rem;color:#7f53ac;font-weight:600;"></span>
+        </form>
+    </header>
+    <div id="heroImageContainer" style="display:none;text-align:center;margin:2rem 0;">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Dream Home" style="max-width:90vw;width:600px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
+    </div>
+    <main>
+        <div id="message"></div>
+        <section class="property-list" id="propertyList">
+            <!-- Property cards will be injected here -->
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html> 

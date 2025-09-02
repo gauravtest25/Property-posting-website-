@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Property Posting Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PropList</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html" id="dashboardLink">Dashboard</a></li>
+            <li><a href="post.html" id="postLink">Post Property</a></li>
+            <li><a href="login.html" id="loginLink">Login</a></li>
+            <li><a href="signup.html" id="signupLink">Signup</a></li>
+            <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </nav>
+    <main>
+        <div id="message"></div>
+        <div class="dashboard-tabs" style="justify-content:center;margin-top:1rem;">
+            <button id="userSignupBtn" class="tab-btn active">User Signup</button>
+            <button id="adminSignupBtn" class="tab-btn">Admin Signup</button>
+        </div>
+        <form id="signupForm">
+            <h2>Signup</h2>
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+            <input type="hidden" id="signupRole" value="user">
+            <button type="submit">Signup</button>
+            <div style="text-align:center;">
+                <a href="login.html">Already have an account? Login</a>
+            </div>
+        </form>
+    </main>
+    <script src="signup.js"></script>
+</body>
+</html> 
